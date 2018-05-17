@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using FightClub.Models;
-using FightClub.Sprite;
+using FightClub.Sprites;
 
 namespace FightClub
 {
@@ -15,7 +15,7 @@ namespace FightClub
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        private List<Character> _sprites;
+        private List<Sprites.Sprite> _sprites;
 
         public Game1()
         {
@@ -48,9 +48,9 @@ namespace FightClub
             var texture = Content.Load<Texture2D>("Player1/WalkingLeft"); // Foto
             //var texture2 = Content.Load<Texture2D>("move2"); // Foto
 
-            _sprites = new List<Character>()
+            _sprites = new List<Sprite>()
             {
-                new Character(new Dictionary<string, Animation>()
+                new Sprite(new Dictionary<string, Animation>()
                     {
                       { "WalkUp", new Animation(Content.Load<Texture2D>("Player1/WalkingUp"), 1) },
                       { "WalkDown", new Animation(Content.Load<Texture2D>("Player1/WalkingDown"), 1) },
@@ -67,7 +67,7 @@ namespace FightClub
                         Right = Keys.D,
                       },
                     },
-                    new Character(new Dictionary<string, Animation>()
+                    new Sprites.Sprite(new Dictionary<string, Animation>()
                     {
                       { "WalkUp", new Animation(Content.Load<Texture2D>("Player2/WalkingUp"), 1) },
                       { "WalkDown", new Animation(Content.Load<Texture2D>("Player2/WalkingDown"), 1) },

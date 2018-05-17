@@ -9,9 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FightClub.Sprite
+namespace FightClub.Sprites
 {
-    public class Character
+    public class Sprite
     {
         protected AnimationManager _animationManager;
 
@@ -87,18 +87,18 @@ namespace FightClub.Sprite
             else _animationManager.Stop();
         }
 
-        public Character(Dictionary<string, Animation> animations)
+        public Sprite(Dictionary<string, Animation> animations)
         {
             _animations = animations;
             _animationManager = new AnimationManager(_animations.First().Value);
         }
 
-        public Character(Texture2D texture)
+        public Sprite(Texture2D texture)
         {
             _texture = texture;
         }
 
-        public void Update(GameTime gameTime, List<Character> sprites)
+        public void Update(GameTime gameTime, List<Sprite> sprites)
         {
             Move();
 
