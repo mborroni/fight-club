@@ -33,7 +33,9 @@ namespace FightClub.Sprites
             }
         }
 
-        public float Speed = 2f;
+        public float Speed = 3f;
+
+        public float Gravity = 0.1f;
 
         public Vector2 Velocity;
 
@@ -50,6 +52,8 @@ namespace FightClub.Sprites
 
         public void Move()
         {
+            Velocity.Y += Gravity; 
+
             if (Input == null)
                 return;
 

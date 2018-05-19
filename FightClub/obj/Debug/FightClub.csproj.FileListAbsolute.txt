@@ -27,3 +27,34 @@ C:\Users\milib\code\FightClub\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Playe
 C:\Users\milib\code\FightClub\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Player1\WalkingLeft.xnb
 C:\Users\milib\code\FightClub\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Player1\WalkingRight.xnb
 C:\Users\milib\code\FightClub\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Player1\WalkingUp.xnb
+C:\Users\milib\code\fight-club\FightClub\obj\Debug\FightClub.csprojResolveAssemblyReference.cache
+C:\Users\milib\code\fight-club\FightClub\obj\Debug\FightClub.csproj.CoreCompileInputs.cache
+C:\Users\milib\code\fight-club\FightClub\obj\Debug\FightClub.exe
+C:\Users\milib\code\fight-club\FightClub\obj\Debug\FightClub.pdb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\samus move.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\samus stand.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\x86\SDL2.dll
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\x64\SDL2.dll
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\x86\soft_oal.dll
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\x64\soft_oal.dll
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\x86\libSDL2-2.0.so.0
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\x64\libSDL2-2.0.so.0
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\x86\libopenal.so.1
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\x64\libopenal.so.1
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\libSDL2-2.0.0.dylib
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\libopenal.1.dylib
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll.config
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\FightClub.exe
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\FightClub.pdb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll
+C:\Users\milib\code\fight-club\FightClub\obj\Debug\FightClub.csproj.CopyComplete
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Dog\Death.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Dog\JumpingLeft.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Dog\JumpingRight.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Dog\WalkingDown.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Dog\WalkingLeft.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Dog\WalkingRight.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Cat\WalkingDown.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Cat\WalkingLeft.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Cat\WalkingRight.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Cat\WalkingUp.xnb

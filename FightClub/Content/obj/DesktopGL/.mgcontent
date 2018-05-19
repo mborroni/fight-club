@@ -4,13 +4,15 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/milib/code/FightClub/FightClub/Content/Player1/WalkingDown.png</File>
-    <File>C:/Users/milib/code/FightClub/FightClub/Content/Player1/WalkingLeft.png</File>
-    <File>C:/Users/milib/code/FightClub/FightClub/Content/Player1/WalkingRight.png</File>
-    <File>C:/Users/milib/code/FightClub/FightClub/Content/Player1/WalkingUp.png</File>
-    <File>C:/Users/milib/code/FightClub/FightClub/Content/Player2/WalkingDown.png</File>
-    <File>C:/Users/milib/code/FightClub/FightClub/Content/Player2/WalkingLeft.png</File>
-    <File>C:/Users/milib/code/FightClub/FightClub/Content/Player2/WalkingRight.png</File>
-    <File>C:/Users/milib/code/FightClub/FightClub/Content/Player2/WalkingUp.png</File>
+    <File>C:/Users/milib/code/fight-club/FightClub/Content/Dog/WalkingLeft.png</File>
+    <File>C:/Users/milib/code/fight-club/FightClub/Content/Dog/WalkingRight.png</File>
+    <File>C:/Users/milib/code/fight-club/FightClub/Content/Dog/WalkingDown.png</File>
+    <File>C:/Users/milib/code/fight-club/FightClub/Content/Dog/Death.png</File>
+    <File>C:/Users/milib/code/fight-club/FightClub/Content/Dog/JumpingLeft.png</File>
+    <File>C:/Users/milib/code/fight-club/FightClub/Content/Dog/JumpingRight.png</File>
+    <File>C:/Users/milib/code/fight-club/FightClub/Content/Cat/WalkingDown.png</File>
+    <File>C:/Users/milib/code/fight-club/FightClub/Content/Cat/WalkingLeft.png</File>
+    <File>C:/Users/milib/code/fight-club/FightClub/Content/Cat/WalkingRight.png</File>
+    <File>C:/Users/milib/code/fight-club/FightClub/Content/Cat/WalkingUp.png</File>
   </SourceFiles>
 </SourceFileCollection>
