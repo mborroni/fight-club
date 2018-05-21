@@ -23,13 +23,13 @@ namespace FightClub.Sprites
 
         public Vector2 Position
         {
-            get { return _position; }
+            get { return this._position; }
             set
             {
-                _position = value;
+                this._position = value;
 
-                if (_animationManager != null)
-                    _animationManager.Position = _position;
+                if (this._animationManager != null)
+                    this._animationManager.Position = this._position;
             }
         }
 
@@ -39,40 +39,40 @@ namespace FightClub.Sprites
 
         public Vector2 Velocity;
 
-        public Input Input;
+        public Input _input;
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (_texture != null)
+            if (this._texture != null)
                 spriteBatch.Draw(_texture, Position, Color.White);
-            else if (_animationManager != null)
-                _animationManager.Draw(spriteBatch);
+            else if (this._animationManager != null)
+                this._animationManager.Draw(spriteBatch);
             else throw new Exception("This ain't right..!");
         }
 
         public void Move()
         {
-            Velocity.Y += Gravity; 
+            Velocity.Y += Gravity;
 
-            if (Input == null)
+            if (_input == null)
                 return;
 
-            if (Keyboard.GetState().IsKeyDown(Input.Left))
+            if (Keyboard.GetState().IsKeyDown(_input.Left))
             {
                 Velocity.X -= Speed;
             }
 
-            if (Keyboard.GetState().IsKeyDown(Input.Right))
+            if (Keyboard.GetState().IsKeyDown(_input.Right))
             {
                 Velocity.X += Speed;
             }
 
-            if (Keyboard.GetState().IsKeyDown(Input.Up))
+            if (Keyboard.GetState().IsKeyDown(_input.Up))
             {
                 Velocity.Y -= Speed;
             }
 
-            if (Keyboard.GetState().IsKeyDown(Input.Down))
+            if (Keyboard.GetState().IsKeyDown(_input.Down))
             {
                 Velocity.Y += Speed;
             }
@@ -81,25 +81,27 @@ namespace FightClub.Sprites
         protected void SetAnimations()
         {
             if (Velocity.X > 0)
-                _animationManager.Play(_animations["WalkRight"]);
+                this._animationManager.Play(this._animations["WalkRight"]);
             else if (Velocity.X < 0)
-                _animationManager.Play(_animations["WalkLeft"]);
+                this._animationManager.Play(this._animations["WalkLeft"]);
             else if (Velocity.Y > 0)
-                _animationManager.Play(_animations["WalkDown"]);
+                this._animationManager.Play(this._animations["WalkDown"]);
             else if (Velocity.Y < 0)
-                _animationManager.Play(_animations["WalkUp"]);
-            else _animationManager.Stop();
+                this._animationManager.Play(this._animations["WalkUp"]);
+            else this._animationManager.Stop();
         }
 
-        public Sprite(Dictionary<string, Animation> animations)
+        public Sprite(Dictionary<string, Animation> animations, Vector2 position, Input input)
         {
-            _animations = animations;
-            _animationManager = new AnimationManager(_animations.First().Value);
+            this._animations = animations;
+            this._animationManager = new AnimationManager(null);
+            this._position = position;
+            this._input = input;
         }
 
         public Sprite(Texture2D texture)
         {
-            _texture = texture;
+            this._texture = texture;
         }
 
         public void Update(GameTime gameTime, List<Sprite> sprites)
@@ -108,7 +110,7 @@ namespace FightClub.Sprites
 
             SetAnimations();
 
-            _animationManager.Update(gameTime);
+            this._animationManager.Update(gameTime);
 
             Position += Velocity;
             Velocity = Vector2.Zero;

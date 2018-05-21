@@ -54,44 +54,13 @@ namespace FightClub
             _sprites = new List<Sprite>()
             {
 
-                    new Sprite(new Dictionary<string, Animation>()
-                    {
-                      { "WalkUp", new Animation(Content.Load<Texture2D>("Dog/JumpingRight"), 4) },
-                      { "WalkDown", new Animation(Content.Load<Texture2D>("Dog/WalkingDown"), 1) },
-                      { "WalkLeft", new Animation(Content.Load<Texture2D>("Dog/WalkingLeft"), 4) },
-                      { "WalkRight", new Animation(Content.Load<Texture2D>("Dog/WalkingRight"), 4) },
-                    })
-                    {
-                      Position = new Vector2(100, 100),
-                      Input = new Input()
-                      {
-                        Up = Keys.W,
-                        Down = Keys.S,
-                        Left = Keys.A,
-                        Right = Keys.D,
-                      },
-                    },
-                    new Sprite(new Dictionary<string, Animation>()
-                    {
-                      { "WalkUp", new Animation(Content.Load<Texture2D>("Cat/WalkingUp"), 1) },
-                      { "WalkDown", new Animation(Content.Load<Texture2D>("Cat/WalkingDown"), 1) },
-                      { "WalkLeft", new Animation(Content.Load<Texture2D>("Cat/WalkingLeft"), 1) },
-                      { "WalkRight", new Animation(Content.Load<Texture2D>("Cat/WalkingRight"), 1) },
-                    })
-                    {
-                      Position = new Vector2(150, 100),
-                      Input = new Input()
-                      {
-                        Up = Keys.Up,
-                        Down = Keys.Down,
-                        Left = Keys.Left,
-                        Right = Keys.Right,
-                      },
-                    },
+                new Dog(this),
+                new Cat(this)
                   };
+        
         }
-    
-            
+
+
 
 
 
