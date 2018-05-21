@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using FightClub.Models;
 using FightClub.Sprites;
+using System;
 
 namespace FightClub
 {
@@ -45,24 +46,24 @@ namespace FightClub
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // Trying to call Dog and Cat Sprites
-            //_sprites = new List<Sprite>()
-            //{
-            //    new Dog()
-            //    new Cat();
-            //};
             _sprites = new List<Sprite>()
             {
-
                 new Dog(this),
-                new Cat(this)
-                  };
-        
+                new Cat(this),
+            };
+
+            Random rnd = new Random();
+
+            for (int i = 0; i < 5; i++)
+            {
+                int positionX = rnd.Next(0, 500);
+                int positionY = rnd.Next(0, 500);
+                Platform platform = new Platform(this, new Vector2(positionX, positionY));
+                _sprites.Add(platform);
+            }
+
+
         }
-
-
-
-
 
     /// <summary>
     /// UnloadContent will be called once per game and is the place to unload

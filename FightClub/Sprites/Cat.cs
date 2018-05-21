@@ -23,7 +23,7 @@ namespace FightClub.Sprites
                 { "WalkLeft", new Animation(game.Content.Load<Texture2D>("Cat/WalkingLeft"), 4) },
                 { "WalkRight", new Animation(game.Content.Load<Texture2D>("Cat/WalkingRight"), 4) },
             };
-            Position = new Vector2(100, 100);
+            Position = new Vector2(300, 100);
             base._input = new Input()
             {
                 Up = Keys.Up,

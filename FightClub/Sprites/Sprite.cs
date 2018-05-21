@@ -19,7 +19,7 @@ namespace FightClub.Sprites
 
         protected Vector2 _position;
 
-        private Texture2D _texture;
+        protected Texture2D _texture;
 
         public Vector2 Position
         {
@@ -99,21 +99,26 @@ namespace FightClub.Sprites
             this._input = input;
         }
 
-        public Sprite(Texture2D texture)
+        public Sprite(Texture2D texture, Vector2 position)
         {
             this._texture = texture;
+            this._position = position;
         }
 
         public void Update(GameTime gameTime, List<Sprite> sprites)
         {
-            Move();
+            if(_animations != null)
+            {
+                Move();
 
-            SetAnimations();
+                SetAnimations();
 
-            this._animationManager.Update(gameTime);
+                this._animationManager.Update(gameTime);
 
-            Position += Velocity;
-            Velocity = Vector2.Zero;
+                Position += Velocity;
+                Velocity = Vector2.Zero;
+            }
+
         }
     }
 }
