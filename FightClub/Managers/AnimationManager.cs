@@ -13,6 +13,11 @@ namespace FightClub.Managers
     {
         private Animation _animation;
 
+        public Animation Animation
+        {
+            get { return _animation; }
+        }
+
         private float _timer;
 
         public Vector2 Position { get; set; }
@@ -24,6 +29,8 @@ namespace FightClub.Managers
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            if(_animation != null)
+            {
             spriteBatch.Draw(_animation.Texture,
                              Position,
                              new Rectangle(_animation.CurrentFrame * _animation.FrameWidth,
@@ -31,6 +38,7 @@ namespace FightClub.Managers
                                            _animation.FrameWidth,
                                            _animation.FrameHeight),
                              Color.White);
+            }
         }
 
         public void Play(Animation animation)

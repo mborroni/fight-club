@@ -33,13 +33,25 @@ namespace FightClub.Sprites
             }
         }
 
+        public Vector2 Velocity;
+
         public float Speed = 3f;
 
         public float Gravity = 0.1f;
 
-        public Vector2 Velocity;
-
         public Input _input;
+
+        public Rectangle Rectangle
+        {
+            get
+            {
+                if(_texture == null)
+                {
+                    return new Rectangle((int)Position.X, (int)Position.Y, _animationManager.Animation.FrameWidth, _animationManager.Animation.FrameHeight);
+                }
+                return new Rectangle((int)Position.X, (int)Position.Y, _texture.Width, _texture.Height);
+            }
+        }
 
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -50,7 +62,7 @@ namespace FightClub.Sprites
             else throw new Exception("This ain't right..!");
         }
 
-        public void Move()
+        public virtual void Move()
         {
             Velocity.Y += Gravity;
 
@@ -105,7 +117,7 @@ namespace FightClub.Sprites
             this._position = position;
         }
 
-        public void Update(GameTime gameTime, List<Sprite> sprites)
+        public virtual void Update(GameTime gameTime, List<Sprite> sprites)
         {
             if(_animations != null)
             {
@@ -119,6 +131,47 @@ namespace FightClub.Sprites
                 Velocity = Vector2.Zero;
             }
 
+        }
+
+        protected void Touches(Sprite sprite)
+        {
+            if (this.Rectangle.Intersects(sprite.Rectangle))
+            {
+                this.Velocity.X = 0;
+                this.Velocity.Y = 0;
+            }
+        }
+
+        protected bool IsTouchingLeft(Sprite sprite)
+        {
+            return this.Rectangle.Right + this.Velocity.X > sprite.Rectangle.Left && // right side of the sprite + x velocity > other sprite left side
+                this.Rectangle.Left < sprite.Rectangle.Left &&
+                this.Rectangle.Bottom > sprite.Rectangle.Top &&
+                this.Rectangle.Top < sprite.Rectangle.Bottom;
+        }
+
+        protected bool IsTouchingRight(Sprite sprite)
+        {
+            return this.Rectangle.Left + this.Velocity.X < sprite.Rectangle.Right &&
+               this.Rectangle.Right > sprite.Rectangle.Right &&
+               this.Rectangle.Bottom > sprite.Rectangle.Top &&
+               this.Rectangle.Top < sprite.Rectangle.Bottom;
+        }
+
+        protected bool IsTouchingTop(Sprite sprite)
+        {
+            return this.Rectangle.Bottom + this.Velocity.Y > sprite.Rectangle.Top &&
+               this.Rectangle.Top < sprite.Rectangle.Top &&
+               this.Rectangle.Right > sprite.Rectangle.Left &&
+               this.Rectangle.Left < sprite.Rectangle.Right;
+        }
+
+        protected bool IsTouchingBottom(Sprite sprite)
+        {
+            return this.Rectangle.Top + this.Velocity.Y < sprite.Rectangle.Bottom &&
+               this.Rectangle.Bottom > sprite.Rectangle.Bottom &&
+               this.Rectangle.Right > sprite.Rectangle.Left &&
+               this.Rectangle.Left < sprite.Rectangle.Right;
         }
     }
 }
