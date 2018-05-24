@@ -35,7 +35,8 @@ namespace FightClub.Sprites
 
         public override void Update(GameTime gameTime, List<Sprite> sprites)
         {
-            Move();
+            float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds; // Difference between frames
+            Move(deltaTime);
 
             foreach (var sprite in sprites)
             {
@@ -51,31 +52,13 @@ namespace FightClub.Sprites
                     this.Velocity.Y = 0;
             }
 
-            Position += Velocity;
-
-            Velocity = Vector2.Zero;
+            base.Update(gameTime, sprites);
         }
 
-        public void Move()
-        {
-            if (Keyboard.GetState().IsKeyDown(_input.Left))
-            {
-                Velocity.X = -Speed;
-            }
-            else if (Keyboard.GetState().IsKeyDown(_input.Right))
-            {
-                Velocity.X = Speed;
-            }
-            if (Keyboard.GetState().IsKeyDown(_input.Up))
-            {
-                Velocity.Y = -Speed;
-            }
-            else if (Keyboard.GetState().IsKeyDown(_input.Down))
-            {
-                Velocity.Y = Speed;
-            }
-
-        }
+        //public void Move(float deltaTime)
+        //{
+        //    base.Move(deltaTime);
+        //}
 
     }
 }

@@ -56,15 +56,16 @@ namespace FightClub.Managers
         public void Stop()
         {
             _timer = 0f;
-
-            _animation.CurrentFrame = 0; // Sets the frame to the beginning
+            
+            if (_animation != null) // Remove
+                _animation.CurrentFrame = 0; // Sets the frame to the beginning
         }
 
         public void Update(GameTime gameTime)
         {
             _timer += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            if (_timer > _animation.FrameSpeed)
+            if (_animation != null && _timer > _animation.FrameSpeed)
             {
                 _timer = 0f;
 

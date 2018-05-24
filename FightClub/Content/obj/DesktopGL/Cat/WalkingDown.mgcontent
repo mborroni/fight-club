@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/milib/code/fight-club/FightClub/Content/Cat/WalkingDown.png</SourceFile>
-  <SourceTime>2018-05-19T17:20:44.136109-03:00</SourceTime>
+  <SourceTime>2018-05-23T19:38:12-03:00</SourceTime>
   <DestFile>C:/Users/milib/code/fight-club/FightClub/Content/bin/DesktopGL/Cat/WalkingDown.xnb</DestFile>
-  <DestTime>2018-05-21T00:34:14.2838908-03:00</DestTime>
+  <DestTime>2018-05-24T20:16:20.5623525-03:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T12:05:36-03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

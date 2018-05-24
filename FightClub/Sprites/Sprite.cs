@@ -21,6 +21,8 @@ namespace FightClub.Sprites
 
         protected Texture2D _texture;
 
+        protected Rectangle _rectangle;
+
         public Vector2 Position
         {
             get { return this._position; }
@@ -35,9 +37,9 @@ namespace FightClub.Sprites
 
         public Vector2 Velocity;
 
-        public float Speed = 3f;
+        public float Speed = 150f;
 
-        public float Gravity = 0.1f;
+        public float Gravity = 5f;
 
         public Input _input;
 
@@ -45,11 +47,18 @@ namespace FightClub.Sprites
         {
             get
             {
-                if(_texture == null)
+
+                if (_texture != null)
+                {
+                    return new Rectangle((int)Position.X, (int)Position.Y, _texture.Width, _texture.Height);
+                }
+
+                if (_animationManager.Animation != null)
                 {
                     return new Rectangle((int)Position.X, (int)Position.Y, _animationManager.Animation.FrameWidth, _animationManager.Animation.FrameHeight);
                 }
-                return new Rectangle((int)Position.X, (int)Position.Y, _texture.Width, _texture.Height);
+
+                return new Rectangle();
             }
         }
 
@@ -62,7 +71,7 @@ namespace FightClub.Sprites
             else throw new Exception("This ain't right..!");
         }
 
-        public virtual void Move()
+        public virtual void Move(float deltaTime)
         {
             Velocity.Y += Gravity;
 
@@ -71,22 +80,22 @@ namespace FightClub.Sprites
 
             if (Keyboard.GetState().IsKeyDown(_input.Left))
             {
-                Velocity.X -= Speed;
+                Velocity.X -= Speed * deltaTime;
             }
 
             if (Keyboard.GetState().IsKeyDown(_input.Right))
             {
-                Velocity.X += Speed;
+                Velocity.X += Speed * deltaTime;
             }
 
             if (Keyboard.GetState().IsKeyDown(_input.Up))
             {
-                Velocity.Y -= Speed;
+                Velocity.Y -= Speed * deltaTime;
             }
 
             if (Keyboard.GetState().IsKeyDown(_input.Down))
             {
-                Velocity.Y += Speed;
+                Velocity.Y += Speed * deltaTime;
             }
         }
 
@@ -121,8 +130,6 @@ namespace FightClub.Sprites
         {
             if(_animations != null)
             {
-                Move();
-
                 SetAnimations();
 
                 this._animationManager.Update(gameTime);
@@ -133,14 +140,15 @@ namespace FightClub.Sprites
 
         }
 
-        protected void Touches(Sprite sprite)
-        {
-            if (this.Rectangle.Intersects(sprite.Rectangle))
-            {
-                this.Velocity.X = 0;
-                this.Velocity.Y = 0;
-            }
-        }
+        //protected bool isColliding(Sprite sprite)
+        //{
+        //    if (this.Rectangle.Intersects(sprite.Rectangle))
+        //    {
+        //        return true;
+        //    }
+
+        //    return false;
+        //}
 
         protected bool IsTouchingLeft(Sprite sprite)
         {
