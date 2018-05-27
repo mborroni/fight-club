@@ -22,6 +22,8 @@ namespace FightClub.Sprites
                 { "WalkDown", new Animation(game.Content.Load<Texture2D>("Dog/WalkingDown"), 1) },
                 { "WalkLeft", new Animation(game.Content.Load<Texture2D>("Dog/WalkingLeft"), 4) },
                 { "WalkRight", new Animation(game.Content.Load<Texture2D>("Dog/WalkingRight"), 4) },
+                { "JumpLeft", new Animation(game.Content.Load<Texture2D>("Dog/JumpingLeft"), 4) },
+                { "JumpRight", new Animation(game.Content.Load<Texture2D>("Dog/JumpingRight"), 4) },
             };
             Position = new Vector2(100, 100);
             base._input = new Input()
@@ -35,30 +37,8 @@ namespace FightClub.Sprites
 
         public override void Update(GameTime gameTime, List<Sprite> sprites)
         {
-            float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds; // Difference between frames
-            Move(deltaTime);
-
-            foreach (var sprite in sprites)
-            {
-                if (sprite == this)
-                    continue;
-
-                if ((this.Velocity.X > 0 && this.IsTouchingLeft(sprite)) ||
-                    (this.Velocity.X < 0 && this.IsTouchingRight(sprite)))
-                    this.Velocity.X = 0;
-
-                if ((this.Velocity.Y > 0 && this.IsTouchingTop(sprite)) ||
-                    (this.Velocity.Y < 0 && this.IsTouchingBottom(sprite)))
-                    this.Velocity.Y = 0;
-            }
-
             base.Update(gameTime, sprites);
         }
-
-        //public void Move(float deltaTime)
-        //{
-        //    base.Move(deltaTime);
-        //}
 
     }
 }

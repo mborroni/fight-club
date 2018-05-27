@@ -27,7 +27,6 @@ C:\Users\milib\code\FightClub\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Playe
 C:\Users\milib\code\FightClub\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Player1\WalkingLeft.xnb
 C:\Users\milib\code\FightClub\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Player1\WalkingRight.xnb
 C:\Users\milib\code\FightClub\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Player1\WalkingUp.xnb
-C:\Users\milib\code\fight-club\FightClub\obj\Debug\FightClub.csprojResolveAssemblyReference.cache
 C:\Users\milib\code\fight-club\FightClub\obj\Debug\FightClub.csproj.CoreCompileInputs.cache
 C:\Users\milib\code\fight-club\FightClub\obj\Debug\FightClub.exe
 C:\Users\milib\code\fight-club\FightClub\obj\Debug\FightClub.pdb
@@ -105,3 +104,7 @@ C:\Users\rodtr\Downloads\fight-club-master\FightClub\bin\DesktopGL\AnyCPU\Debug\
 C:\Users\rodtr\Downloads\fight-club-master\FightClub\bin\DesktopGL\AnyCPU\Debug\MonoGame.Extended.pdb
 C:\Users\rodtr\Downloads\fight-club-master\FightClub\bin\DesktopGL\AnyCPU\Debug\Newtonsoft.Json.xml
 C:\Users\rodtr\Downloads\fight-club-master\FightClub\obj\Debug\FightClub.csprojResolveAssemblyReference.cache
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Assets\badge.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Assets\coin.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Assets\poison.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Assets\star.xnb

@@ -57,7 +57,7 @@ namespace FightClub.Managers
         {
             _timer = 0f;
             
-            if (_animation != null) // Remove
+            if (_animation != null)
                 _animation.CurrentFrame = 0; // Sets the frame to the beginning
         }
 

@@ -37,11 +37,16 @@ namespace FightClub.Sprites
 
         public Vector2 Velocity;
 
-        public float Speed = 150f;
+        public float Speed = 250f;
 
-        public float Gravity = 5f;
+        public float Gravity = 6f;
 
         public Input _input;
+
+        public Boolean _isJumping;
+
+        public float jumpSpeed = 0f;
+
 
         public Rectangle Rectangle
         {
@@ -75,8 +80,19 @@ namespace FightClub.Sprites
         {
             Velocity.Y += Gravity;
 
+            if (_isJumping)
+            {
+                Velocity.Y += jumpSpeed;
+                jumpSpeed += 1;
+            }
+
+            if (_isJumping && Velocity.Y >= 10f)
+            {
+                _isJumping = false;
+            }
+
             if (_input == null)
-                return;
+            return;
 
             if (Keyboard.GetState().IsKeyDown(_input.Left))
             {
@@ -88,14 +104,37 @@ namespace FightClub.Sprites
                 Velocity.X += Speed * deltaTime;
             }
 
-            if (Keyboard.GetState().IsKeyDown(_input.Up))
+            if (Keyboard.GetState().IsKeyDown(_input.Up) && ! _isJumping)
             {
-                Velocity.Y -= Speed * deltaTime;
+                _isJumping = true;
+                jumpSpeed = -20f;
             }
 
             if (Keyboard.GetState().IsKeyDown(_input.Down))
             {
                 Velocity.Y += Speed * deltaTime;
+            }
+
+        }
+
+        protected void CheckCollisions(List<Sprite> sprites, float deltaTime)
+        {
+            foreach (var sprite in sprites)
+            {
+                if (sprite == this)
+                    continue;
+
+                if ((this.Velocity.X > 0 && this.IsTouchingLeft(sprite)) ||
+                    (this.Velocity.X < 0 && this.IsTouchingRight(sprite)))
+                {
+                    this.Velocity.X = 0;
+                }
+
+                if (((Velocity.Y > 0 && this.IsTouchingTop(sprite)) ||
+                     (Velocity.Y < 0 && this.IsTouchingBottom(sprite))))
+                {
+                    this.Velocity.Y = 0;
+                }
             }
         }
 
@@ -107,8 +146,10 @@ namespace FightClub.Sprites
                 this._animationManager.Play(this._animations["WalkLeft"]);
             else if (Velocity.Y > 0)
                 this._animationManager.Play(this._animations["WalkDown"]);
-            else if (Velocity.Y < 0)
-                this._animationManager.Play(this._animations["WalkUp"]);
+            else if (Velocity.X < 0 && _isJumping)
+                this._animationManager.Play(this._animations["JumpLeft"]);
+            else if (Velocity.X > 0 && _isJumping)
+                this._animationManager.Play(this._animations["JumpRight"]);
             else this._animationManager.Stop();
         }
 
@@ -128,8 +169,12 @@ namespace FightClub.Sprites
 
         public virtual void Update(GameTime gameTime, List<Sprite> sprites)
         {
-            if(_animations != null)
+            float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            if (_animations != null)
             {
+                Move(deltaTime);
+                CheckCollisions(sprites, deltaTime);
                 SetAnimations();
 
                 this._animationManager.Update(gameTime);
@@ -140,15 +185,15 @@ namespace FightClub.Sprites
 
         }
 
-        //protected bool isColliding(Sprite sprite)
-        //{
-        //    if (this.Rectangle.Intersects(sprite.Rectangle))
-        //    {
-        //        return true;
-        //    }
+        protected bool isColliding(Sprite sprite)
+        {
+            if (this.Rectangle.Intersects(sprite.Rectangle))
+            {
+                return true;
+            }
 
-        //    return false;
-        //}
+            return false;
+        }
 
         protected bool IsTouchingLeft(Sprite sprite)
         {
