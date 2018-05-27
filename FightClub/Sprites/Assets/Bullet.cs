@@ -26,8 +26,8 @@ namespace FightClub.Sprites
             if (_currentKey.IsKeyDown(Keys.Space) &&
                 _previousKey.IsKeyUp(Keys.Space))
             {
-                var bullet = Bullet.Clone() as Bullet;
-                sprites.Add(bullet);
+                //var bullet = Bullet.Clone() as Bullet;
+                //sprites.Add(bullet);
 
             } 
 

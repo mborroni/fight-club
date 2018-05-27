@@ -108,3 +108,4 @@ C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Asse
 C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Assets\coin.xnb
 C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Assets\poison.xnb
 C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Assets\star.xnb
+C:\Users\milib\code\fight-club\FightClub\obj\Debug\FightClub.csprojResolveAssemblyReference.cache
