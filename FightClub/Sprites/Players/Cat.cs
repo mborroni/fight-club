@@ -11,20 +11,19 @@ using System.Threading.Tasks;
 
 namespace FightClub.Sprites
 {
-    public class Cat : Sprite
+    public class Cat : PhysicsSprite
     {
-        public Bullet Bullet;
 
         public Cat(Game game)
             : base(null, new Vector2(0, 0), null)
         {
             _animations = new Dictionary<string, Animation>() {
-                { "WalkUp", new Animation(game.Content.Load<Texture2D>("Cat/JumpingRight"), 4) },
-                { "WalkDown", new Animation(game.Content.Load<Texture2D>("Cat/WalkingDown"), 4) },
+                { "Idle", new Animation(game.Content.Load<Texture2D>("Cat/WalkingDown"), 4) },
                 { "WalkLeft", new Animation(game.Content.Load<Texture2D>("Cat/WalkingLeft"), 4) },
                 { "WalkRight", new Animation(game.Content.Load<Texture2D>("Cat/WalkingRight"), 4) },
                 { "JumpLeft", new Animation(game.Content.Load<Texture2D>("Cat/JumpingLeft"), 4) },
                 { "JumpRight", new Animation(game.Content.Load<Texture2D>("Cat/JumpingRight"), 4) },
+                //{ "Die", new Animation(game.Content.Load<Texture2D>("Cat/Die"), 4) },
             };
             Position = new Vector2(300, 100);
             base._input = new Input()
@@ -36,10 +35,9 @@ namespace FightClub.Sprites
             };
         }
 
-        public override void Update(GameTime gameTime, List<Sprite> sprites)
+        public override void Die()
         {
-            base.Update(gameTime, sprites);
+            
         }
-
     }
 }

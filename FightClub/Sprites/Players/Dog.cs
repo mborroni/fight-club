@@ -11,15 +11,14 @@ using System.Threading.Tasks;
 
 namespace FightClub.Sprites
 {
-    public class Dog : Sprite
+    public class Dog : PhysicsSprite
     {
 
         public Dog(Game game)
             : base(null, new Vector2(0, 0), null)
         {
-            _animations = new Dictionary<string, Animation>() {
-                { "WalkUp", new Animation(game.Content.Load<Texture2D>("Dog/JumpingRight"), 4) },
-                { "WalkDown", new Animation(game.Content.Load<Texture2D>("Dog/WalkingDown"), 1) },
+            _animations = new Dictionary<string, Animation>() { 
+                { "Idle", new Animation(game.Content.Load<Texture2D>("Dog/WalkingDown"), 1) },
                 { "WalkLeft", new Animation(game.Content.Load<Texture2D>("Dog/WalkingLeft"), 4) },
                 { "WalkRight", new Animation(game.Content.Load<Texture2D>("Dog/WalkingRight"), 4) },
                 { "JumpLeft", new Animation(game.Content.Load<Texture2D>("Dog/JumpingLeft"), 4) },
@@ -34,14 +33,5 @@ namespace FightClub.Sprites
                 Right = Keys.D,
             };
         }
-
-        public override void Update(GameTime gameTime, List<Sprite> sprites)
-        {
-            base.Update(gameTime, sprites);
-        }
-
     }
 }
-
-
-

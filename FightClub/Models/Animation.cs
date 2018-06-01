@@ -31,9 +31,9 @@ namespace FightClub.Models
 
             FrameCount = frameCount;
 
-            IsLooping = true; // Loops by default
+            IsLooping = true;
 
-            FrameSpeed = 0.2f; // Duration of each frame
+            FrameSpeed = 0.2f; 
         }
     }
 }

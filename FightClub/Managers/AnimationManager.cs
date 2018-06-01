@@ -22,6 +22,8 @@ namespace FightClub.Managers
 
         public Vector2 Position { get; set; }
 
+        public bool isPlaying;
+
         public AnimationManager(Animation animation)
         {
             _animation = animation;
@@ -51,6 +53,8 @@ namespace FightClub.Managers
             _animation.CurrentFrame = 0;
 
             _timer = 0;
+
+            isPlaying = true;
         }
 
         public void Stop()
@@ -59,6 +63,8 @@ namespace FightClub.Managers
             
             if (_animation != null)
                 _animation.CurrentFrame = 0; // Sets the frame to the beginning
+
+            isPlaying = false;
         }
 
         public void Update(GameTime gameTime)
