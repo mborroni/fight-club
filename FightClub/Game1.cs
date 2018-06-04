@@ -7,6 +7,8 @@ using System;
 using MonoGame.Extended.Tiled.Graphics;
 using MonoGame.Extended.Tiled;
 using FightClub.Sprites.Platforms;
+using FightClub.Screens;
+using FightClub.Models;
 
 namespace FightClub
 {
@@ -18,7 +20,13 @@ namespace FightClub
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        private List<Sprite> _sprites;
+        private Screen _currentScreen;
+        private Screen _nextScreen;
+
+        public void ChangeScreen(Screen screen)
+        {
+            _nextScreen = screen; 
+        }
 
         public Game1()
         {
@@ -28,11 +36,13 @@ namespace FightClub
 
         protected override void Initialize()
         {
-            graphics.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
-            graphics.PreferredBackBufferHeight = GraphicsDevice.DisplayMode.Height;
+            IsMouseVisible = true;
+            graphics.PreferredBackBufferWidth = 800;
+            graphics.PreferredBackBufferHeight = 480;
+            //graphics.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
+            //graphics.PreferredBackBufferHeight = GraphicsDevice.DisplayMode.Height;
             graphics.IsFullScreen = false;
             graphics.ApplyChanges();
-
 
             base.Initialize();
         }
@@ -41,30 +51,7 @@ namespace FightClub
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            _sprites = new List<Sprite>()
-            {
-                new Dog(this),
-                new Cat(this),
-            };
-
-            Random rnd = new Random();
-
-            for (int i = 0; i < 30; i++)
-            {
-                int positionX = rnd.Next(0, 800);
-                int positionY = rnd.Next(0, 500);
-                Ball ball = new Ball(this, new Vector2(positionX, -30));
-                _sprites.Add(ball);
-            }
-
-            for (int i = 0; i < 5; i++)
-            {
-                int positionX = rnd.Next(0, 800);
-                int positionY = rnd.Next(0, 800);
-                Platform platform = new Platform(this, new Vector2(positionX, positionY));
-                _sprites.Add(platform);
-            }
-
+            _currentScreen = new TitleScreen(this, graphics.GraphicsDevice, Content);
         }
 
         protected override void UnloadContent()
@@ -74,30 +61,29 @@ namespace FightClub
 
         protected override void Update(GameTime gameTime)
         {
-
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-
-            foreach (var sprite in _sprites)
+            if(_nextScreen != null)
             {
-                sprite.Update(gameTime, _sprites);
+                _currentScreen = _nextScreen;
+               // _nextScreen = null;
             }
 
-            base.Update(gameTime);
+            _currentScreen.Update(gameTime);
+
+
+            //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            //    Exit();
+
+
+
         }
 
-        protected override void Draw(GameTime gameTime)
+        protected virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
 
-            //_mapRenderer.Draw(_map);
-
-            foreach (var sprite in _sprites)
-            {
-                sprite.Draw(spriteBatch);
-            }
+            _currentScreen.Draw(gameTime, spriteBatch);
 
             spriteBatch.End();
 

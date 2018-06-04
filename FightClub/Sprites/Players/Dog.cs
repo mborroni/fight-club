@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace FightClub.Sprites
 {
-    public class Dog : PhysicsSprite
+    public class Dog : Player
     {
 
         public Dog(Game game)
-            : base(null, new Vector2(0, 0), null)
+            : base(game)
         {
             _animations = new Dictionary<string, Animation>() { 
                 { "Idle", new Animation(game.Content.Load<Texture2D>("Dog/WalkingDown"), 1) },
@@ -23,6 +23,7 @@ namespace FightClub.Sprites
                 { "WalkRight", new Animation(game.Content.Load<Texture2D>("Dog/WalkingRight"), 4) },
                 { "JumpLeft", new Animation(game.Content.Load<Texture2D>("Dog/JumpingLeft"), 4) },
                 { "JumpRight", new Animation(game.Content.Load<Texture2D>("Dog/JumpingRight"), 4) },
+                { "Die", new Animation(game.Content.Load<Texture2D>("Dog/Death"), 4) },
             };
             Position = new Vector2(100, 100);
             base._input = new Input()

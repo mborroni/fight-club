@@ -42,10 +42,17 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Button.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Managers\AnimationManager.cs" />
     <Compile Include="Models\Animation.cs" />
     <Compile Include="Models\Input.cs" />
+    <Compile Include="Models\Component.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\Screen.cs" />
+    <Compile Include="Screens\GameScreen.cs" />
+    <Compile Include="Screens\TitleScreen.cs" />
+    <Compile Include="Sprites\AnimatedSprite.cs" />
     <Compile Include="Sprites\PhysicsSprite.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

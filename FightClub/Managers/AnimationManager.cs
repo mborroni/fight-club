@@ -6,11 +6,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FightClub.Sprites;
 
 namespace FightClub.Managers
 {
     public class AnimationManager
     {
+        private Sprite _sprite;
+
         private Animation _animation;
 
         public Animation Animation
@@ -20,26 +23,25 @@ namespace FightClub.Managers
 
         private float _timer;
 
-        public Vector2 Position { get; set; }
-
         public bool isPlaying;
 
-        public AnimationManager(Animation animation)
+        public AnimationManager(Animation animation, Sprite sprite)
         {
             _animation = animation;
+            _sprite = sprite;
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             if(_animation != null)
             {
-            spriteBatch.Draw(_animation.Texture,
-                             Position,
-                             new Rectangle(_animation.CurrentFrame * _animation.FrameWidth,
-                                           0,
-                                           _animation.FrameWidth,
-                                           _animation.FrameHeight),
-                             Color.White);
+                spriteBatch.Draw(_animation.Texture,
+                                 _sprite.Position,
+                                 new Rectangle(_animation.CurrentFrame * _animation.FrameWidth,
+                                               0,
+                                               _animation.FrameWidth,
+                                               _animation.FrameHeight),
+                                 Color.White);
             }
         }
 

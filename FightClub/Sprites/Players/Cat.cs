@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace FightClub.Sprites
 {
-    public class Cat : PhysicsSprite
+    public class Cat : Player
     {
 
         public Cat(Game game)
-            : base(null, new Vector2(0, 0), null)
+            : base(game)
         {
             _animations = new Dictionary<string, Animation>() {
                 { "Idle", new Animation(game.Content.Load<Texture2D>("Cat/WalkingDown"), 4) },
@@ -23,7 +23,7 @@ namespace FightClub.Sprites
                 { "WalkRight", new Animation(game.Content.Load<Texture2D>("Cat/WalkingRight"), 4) },
                 { "JumpLeft", new Animation(game.Content.Load<Texture2D>("Cat/JumpingLeft"), 4) },
                 { "JumpRight", new Animation(game.Content.Load<Texture2D>("Cat/JumpingRight"), 4) },
-                //{ "Die", new Animation(game.Content.Load<Texture2D>("Cat/Die"), 4) },
+                { "Die", new Animation(game.Content.Load<Texture2D>("Cat/Death"), 4) },
             };
             Position = new Vector2(300, 100);
             base._input = new Input()
@@ -33,11 +33,6 @@ namespace FightClub.Sprites
                 Left = Keys.Left,
                 Right = Keys.Right,
             };
-        }
-
-        public override void Die()
-        {
-            
         }
     }
 }

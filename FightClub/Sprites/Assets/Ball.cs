@@ -13,27 +13,31 @@ namespace FightClub.Sprites
     class Ball : PhysicsSprite
     {
 
+        protected Game game;
+        protected bool isDead = false;
+
         public Ball(Game game, Vector2 position)
-           : base(null, position, null)
+           : base(position, null)
         {
+            this.game = game;
             _animations = new Dictionary<string, Animation>() {
-                { "Idle", new Animation(game.Content.Load<Texture2D>("Assets/Ball"), 4) },
+                { "Idle", new Animation(game.Content.Load<Texture2D>("Assets/ball"), 4) },
+                // TODO: Set animation when onCollision
+                { "Die", new Animation(game.Content.Load<Texture2D>("Assets/Die"), 1) },
             };
         }
 
         public override void Update(GameTime gameTime, List<Sprite> sprites)
         {
+            SetAnimations();
             base.Update(gameTime, sprites);
         }
 
         protected override void OnCollision(Sprite sprite)
         {
-            if (sprite is Dog || sprite is Cat)
+            if (sprite is Platform || sprite is Player)
             {
-                sprite.Die();
-            }
-            if (sprite is Platform)
-            {
+                isDead = true;
                 this.Die();
             }
         }
@@ -41,8 +45,8 @@ namespace FightClub.Sprites
         public override void Die()
         {
             Random rnd = new Random();
-            _position.X = rnd.Next(0, 800);
-             _position.Y = 0;
+            _position.X = rnd.Next(0, game.GraphicsDevice.DisplayMode.Width);
+             _position.Y = rnd.Next(-30, 0);
         }
 
     }
