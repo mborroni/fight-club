@@ -1,6 +1,5 @@
 ﻿using FightClub.Models;
 using FightClub.Sprites;
-using FightClub.Sprites.Platforms;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -13,7 +12,7 @@ namespace FightClub
 {
     public class PhysicsSprite : AnimatedSprite
     {
-        public int Health = 100;
+        public int Health = 500;
 
         public const float CONTACT_FORCE = 8f;
 

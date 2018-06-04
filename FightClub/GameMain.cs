@@ -4,9 +4,6 @@ using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using FightClub.Sprites;
 using System;
-using MonoGame.Extended.Tiled.Graphics;
-using MonoGame.Extended.Tiled;
-using FightClub.Sprites.Platforms;
 using FightClub.Screens;
 using FightClub.Models;
 
@@ -15,7 +12,7 @@ namespace FightClub
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Game1 : Game
+    public class GameMain : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -28,7 +25,7 @@ namespace FightClub
             _nextScreen = screen; 
         }
 
-        public Game1()
+        public GameMain()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";

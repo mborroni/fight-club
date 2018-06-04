@@ -11,11 +11,11 @@ namespace FightClub.Models
 {
     public abstract class Screen
     {
-        protected Game1 _game;
+        protected GameMain _game;
         protected GraphicsDevice _graphicsDevice;
         protected ContentManager _content;
 
-        public Screen(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
+        public Screen(GameMain game, GraphicsDevice graphicsDevice, ContentManager content)
         {
             this._game = game;
             this._graphicsDevice = graphicsDevice;

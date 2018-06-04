@@ -1,5 +1,4 @@
 ﻿using FightClub.Models;
-using FightClub.Sprites.Platforms;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -35,8 +34,16 @@ namespace FightClub.Sprites
 
         protected override void OnCollision(Sprite sprite)
         {
-            if (sprite is Platform || sprite is Player)
+            if (sprite is Platform)
             {
+                isDead = true;
+                this.Die();
+            }
+
+            //TODO: Fix this.
+            if (sprite is Player)
+            {
+                ((PhysicsSprite)sprite).Health -= 10;
                 isDead = true;
                 this.Die();
             }

@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FightClub.Sprites.Platforms
+namespace FightClub.Sprites
 {
     public class Platform : Sprite
     {
 
-        public Platform(Game1 game, Texture2D texture, Vector2 position)
+        public Platform(GameMain game, Texture2D texture, Vector2 position)
             : base(texture, position)
         {
         }

@@ -22,7 +22,7 @@ namespace FightClub.Screens
         Texture2D backgroundTitleScreen;
         Rectangle mainFrame;
 
-        public TitleScreen(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
+        public TitleScreen(GameMain game, GraphicsDevice graphicsDevice, ContentManager content)
             : base(game, graphicsDevice, content)
         {
         }

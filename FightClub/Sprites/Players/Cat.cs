@@ -18,14 +18,14 @@ namespace FightClub.Sprites
             : base(game)
         {
             _animations = new Dictionary<string, Animation>() {
-                { "Idle", new Animation(game.Content.Load<Texture2D>("Cat/WalkingDown"), 4) },
-                { "WalkLeft", new Animation(game.Content.Load<Texture2D>("Cat/WalkingLeft"), 4) },
-                { "WalkRight", new Animation(game.Content.Load<Texture2D>("Cat/WalkingRight"), 4) },
-                { "JumpLeft", new Animation(game.Content.Load<Texture2D>("Cat/JumpingLeft"), 4) },
-                { "JumpRight", new Animation(game.Content.Load<Texture2D>("Cat/JumpingRight"), 4) },
-                { "Die", new Animation(game.Content.Load<Texture2D>("Cat/Death"), 4) },
+                { "Idle", new Animation(game.Content.Load<Texture2D>("Cat/Idle"), 4) },
+                { "WalkLeft", new Animation(game.Content.Load<Texture2D>("Cat/RunLeft"), 8) },
+                { "WalkRight", new Animation(game.Content.Load<Texture2D>("Cat/RunRight"), 8) },
+                { "JumpLeft", new Animation(game.Content.Load<Texture2D>("Cat/JumpingLeft"), 8) },
+                { "JumpRight", new Animation(game.Content.Load<Texture2D>("Cat/JumpingRight"), 8) },
+                { "Die", new Animation(game.Content.Load<Texture2D>("Cat/Death"), 8) },
             };
-            Position = new Vector2(300, 100);
+            Position = new Vector2(1375, 550);
             base._input = new Input()
             {
                 Up = Keys.Up,

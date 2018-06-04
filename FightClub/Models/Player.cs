@@ -1,5 +1,4 @@
 ﻿using FightClub.Sprites;
-using FightClub.Sprites.Platforms;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System;
