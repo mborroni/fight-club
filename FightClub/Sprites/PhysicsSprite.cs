@@ -1,5 +1,6 @@
 ﻿using FightClub.Models;
 using FightClub.Sprites;
+using FightClub.Sprites.Platforms;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -22,7 +23,7 @@ namespace FightClub
 
         public float ContactVelocity = 0f;
 
-        public float Gravity = 6f;
+        public float Gravity = 7f;
 
         public float jumpSpeed = 0f;
 
@@ -74,10 +75,10 @@ namespace FightClub
             if (_isJumping)
             {
                 Velocity.Y += jumpSpeed;
-                jumpSpeed += .5f;
+                jumpSpeed += .8f;
             }
 
-            if (_isJumping && Velocity.Y >= 10f)
+            if (_isJumping && Velocity.Y >= 0f)
             {
                 _isJumping = false;
             }
@@ -114,6 +115,11 @@ namespace FightClub
                 {
                     Velocity.Y = 0;
                     OnCollision(sprite);
+
+                    if (sprite is Platform)
+                    {
+                        Jumps = 0;
+                    }
                 }
             }
         }

@@ -37,21 +37,24 @@ namespace FightClub
         protected override void Initialize()
         {
             IsMouseVisible = true;
-            graphics.PreferredBackBufferWidth = 800;
-            graphics.PreferredBackBufferHeight = 480;
-            //graphics.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
-            //graphics.PreferredBackBufferHeight = GraphicsDevice.DisplayMode.Height;
+            //graphics.PreferredBackBufferWidth = 800;
+            //graphics.PreferredBackBufferHeight = 480;
+            graphics.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
+            graphics.PreferredBackBufferHeight = GraphicsDevice.DisplayMode.Height;
             graphics.IsFullScreen = false;
             graphics.ApplyChanges();
 
             base.Initialize();
+
+            _nextScreen = new TitleScreen(this, graphics.GraphicsDevice, Content);
         }
 
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            _currentScreen = new TitleScreen(this, graphics.GraphicsDevice, Content);
+            
+            if (_currentScreen != null)
+                _currentScreen.LoadContent();
         }
 
         protected override void UnloadContent()
@@ -64,17 +67,16 @@ namespace FightClub
             if(_nextScreen != null)
             {
                 _currentScreen = _nextScreen;
-               // _nextScreen = null;
+               _nextScreen = null;
+                LoadContent();
             }
 
             _currentScreen.Update(gameTime);
 
+            Draw(gameTime, spriteBatch);
 
-            //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-            //    Exit();
-
-
-
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+                Exit();
         }
 
         protected virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch)

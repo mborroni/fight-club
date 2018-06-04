@@ -23,7 +23,7 @@ namespace FightClub.Sprites
             _animations = new Dictionary<string, Animation>() {
                 { "Idle", new Animation(game.Content.Load<Texture2D>("Assets/ball"), 4) },
                 // TODO: Set animation when onCollision
-                { "Die", new Animation(game.Content.Load<Texture2D>("Assets/Die"), 1) },
+                //{ "Die", new Animation(game.Content.Load<Texture2D>("Assets/Die"), 1) },
             };
         }
 

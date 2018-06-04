@@ -57,7 +57,7 @@ namespace FightClub.Models
                 Health -= 10;
             }
 
-            if (sprite is Platform && IsTouchingTop(sprite))
+            if (sprite is Platform && IsTouchingBottom(sprite))
             {
                 Jumps = 0;
             }

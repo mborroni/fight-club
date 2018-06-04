@@ -16,11 +16,13 @@
     <File>C:/Users/milib/code/fight-club/FightClub/Content/Cat/Death.png</File>
     <File>C:/Users/milib/code/fight-club/FightClub/Content/Cat/JumpingLeft.png</File>
     <File>C:/Users/milib/code/fight-club/FightClub/Content/Cat/JumpingRight.png</File>
-    <File>C:/Users/milib/code/fight-club/FightClub/Content/Platforms/platform_1.png</File>
-    <File>C:/Users/milib/code/fight-club/FightClub/Content/Platforms/platform_2.png</File>
     <File>C:/Users/milib/code/fight-club/FightClub/Content/Assets/ball.png</File>
-    <File>C:/Users/milib/code/fight-club/FightClub/Content/background.png</File>
     <File>C:/Users/milib/code/fight-club/FightClub/Content/Assets/death.png</File>
     <File>C:/Users/milib/code/fight-club/FightClub/Content/Button.png</File>
+    <File>C:/Users/milib/code/fight-club/FightClub/Content/Backgrounds/GameScreen.png</File>
+    <File>C:/Users/milib/code/fight-club/FightClub/Content/Backgrounds/TitleScreen.png</File>
+    <File>C:/Users/milib/code/fight-club/FightClub/Content/Platforms/mainPlatform.png</File>
+    <File>C:/Users/milib/code/fight-club/FightClub/Content/Platforms/onAirPlatform.png</File>
+    <File>C:/Users/milib/code/fight-club/FightClub/Content/Platforms/onAirPlatform2.png</File>
   </SourceFiles>
 </SourceFileCollection>

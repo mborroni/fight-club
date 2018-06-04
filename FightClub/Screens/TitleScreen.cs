@@ -19,24 +19,37 @@ namespace FightClub.Screens
 
         protected List<Component> _components;
 
-        Texture2D background;
+        Texture2D backgroundTitleScreen;
         Rectangle mainFrame;
 
         public TitleScreen(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
             : base(game, graphicsDevice, content)
         {
+        }
+
+        public override void LoadContent()
+        {
+            var width = _graphicsDevice.Viewport.Width;
+            var height = _graphicsDevice.Viewport.Height;
+
+            backgroundTitleScreen = _content.Load<Texture2D>("Backgrounds/TitleScreen");
+            mainFrame = new Rectangle(0, 0, width, height);
+
             var texture = _content.Load<Texture2D>("Button");
-            //SpriteFont font = _content.Load<SpriteFont>("Font/TooMuchInk");
-            var newGameButton = new Button(texture, graphicsDevice)
+            SpriteFont font = _content.Load<SpriteFont>("Font/Ink");
+            var newGameButton = new Button(texture, font, _graphicsDevice)
             {
                 Text = "Play",
-                //Click = new EventHandler(PlayButtonClicked)
+                Position = new Vector2((width / 2) - 120, (height / 2) - 20),
             };
-             var exitGameButton = new Button(texture, graphicsDevice)
-             {
-                 Text = "Exit",
-                 //Click = new EventHandler(ExitButtonClicked)
-             };
+            var exitGameButton = new Button(texture, font, _graphicsDevice)
+            {
+                Text = "Exit",
+                Position = new Vector2((width / 2) - 120, (height / 2) + 60),
+            };
+
+            exitGameButton.Click += new EventHandler(ExitButtonClicked);
+            newGameButton.Click += new EventHandler(PlayButtonClicked);
 
             _components = new List<Component>()
             {
@@ -45,38 +58,28 @@ namespace FightClub.Screens
             };
         }
 
-        protected override void LoadContent()
-        {
-            background = Content.Load<Texture2D>("background");
-            mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
-        }
-
         private void PlayButtonClicked(object sender, EventArgs args)
         {
             _game.ChangeScreen(new GameScreen(_game, _graphicsDevice, _content));
         }
-
-
 
         private void ExitButtonClicked(object sender, EventArgs args)
         {
             _game.Exit();
         }
 
-        protected override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
 
             foreach (var component in _components)
                 component.Update(gameTime);
         }
 
-        protected override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin();
-            spriteBatch.Draw(background, mainFrame, Color.White);
+            spriteBatch.Draw(backgroundTitleScreen, mainFrame, Color.White);
             foreach (var component in _components)
                 component.Draw(gameTime, spriteBatch);
-            spriteBatch.End();
         }
     }
 }

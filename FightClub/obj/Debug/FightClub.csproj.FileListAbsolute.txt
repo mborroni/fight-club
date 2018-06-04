@@ -124,8 +124,13 @@ C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\MonoGame.Ext
 C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\MonoGame.Extended.Tiled.pdb
 C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\MonoGame.Extended.Tiled.xml
 C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Assets\ball.xnb
-C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\background.xnb
 C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Assets\death.xnb
 C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Font\Ink.spritefont
 C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Font\TooMuchInk.TTF
 C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Button.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Font\Ink.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Backgrounds\GameScreen.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Backgrounds\TitleScreen.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Platforms\mainPlatform.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Platforms\onAirPlatform.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Platforms\onAirPlatform2.xnb

@@ -12,10 +12,9 @@ namespace FightClub.Sprites.Platforms
     public class Platform : Sprite
     {
 
-        public Platform(Game1 game, Vector2 position)
-            : base(null, position)
+        public Platform(Game1 game, Texture2D texture, Vector2 position)
+            : base(texture, position)
         {
-            this._texture = game.Content.Load<Texture2D>("Platforms/platform_2");
         }
 
     }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FightClub.Models
 {
-    public abstract class Screen : Game1
+    public abstract class Screen
     {
         protected Game1 _game;
         protected GraphicsDevice _graphicsDevice;
@@ -22,10 +22,10 @@ namespace FightClub.Models
             this._content = content;
         }
 
-        protected override abstract void LoadContent();
+        public abstract void LoadContent();
 
-        protected override abstract void Update(GameTime gameTime);
+        public abstract void Update(GameTime gameTime);
 
-        protected override abstract void Draw(GameTime gameTime, SpriteBatch spriteBatch);
+        public abstract void Draw(GameTime gameTime, SpriteBatch spriteBatch);
     }
 }

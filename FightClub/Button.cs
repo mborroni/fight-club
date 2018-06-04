@@ -50,12 +50,12 @@ namespace FightClub
 
         #region Methods
 
-        public Button(Texture2D texture, GraphicsDevice graphicsDevice)
+        public Button(Texture2D texture, SpriteFont font, GraphicsDevice graphicsDevice)
             : base(graphicsDevice)
         {
             _texture = texture;
 
-            //_font = font;
+            _font = font;
 
             PenColour = Color.Black;
         }
