@@ -20,6 +20,9 @@ namespace FightClub
         private Screen _currentScreen;
         private Screen _nextScreen;
 
+        public int ScreenWidth { get; set; }
+        public int ScreenHeight { get; set; }
+
         public void ChangeScreen(Screen screen)
         {
             _nextScreen = screen; 
@@ -34,12 +37,22 @@ namespace FightClub
         protected override void Initialize()
         {
             IsMouseVisible = true;
-            //graphics.PreferredBackBufferWidth = 800;
-            //graphics.PreferredBackBufferHeight = 480;
-            graphics.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
-            graphics.PreferredBackBufferHeight = GraphicsDevice.DisplayMode.Height;
+
+            ScreenWidth = 1280;
+            ScreenHeight = 720;
+
+            graphics.PreferredBackBufferWidth = ScreenWidth;
+            graphics.PreferredBackBufferHeight = ScreenHeight;
             graphics.IsFullScreen = false;
             graphics.ApplyChanges();
+
+
+            //graphics.PreferredBackBufferWidth = 800;
+            //graphics.PreferredBackBufferHeight = 480;
+            //graphics.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
+            //graphics.PreferredBackBufferHeight = GraphicsDevice.DisplayMode.Height;
+
+            //graphics.ApplyChanges();
 
             base.Initialize();
 
@@ -69,6 +82,9 @@ namespace FightClub
             }
 
             _currentScreen.Update(gameTime);
+
+            ScreenWidth = GraphicsDevice.Viewport.Bounds.Width;
+            ScreenHeight = GraphicsDevice.Viewport.Bounds.Height;
 
             Draw(gameTime, spriteBatch);
 

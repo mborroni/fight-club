@@ -25,7 +25,7 @@ namespace FightClub.Sprites
                 { "JumpRight", new Animation(game.Content.Load<Texture2D>("Cat/JumpingRight"), 8) },
                 { "Die", new Animation(game.Content.Load<Texture2D>("Cat/Death"), 8) },
             };
-            Position = new Vector2(1375, 550);
+            Position = new Vector2(950, 425);
             base._input = new Input()
             {
                 Up = Keys.Up,

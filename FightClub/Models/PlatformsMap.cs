@@ -43,15 +43,15 @@ namespace FightClub.Models
 
         private void MainPlatform(List<Platform> platforms, Texture2D mainPlatform)
         {
-            Platform platform = new Platform(_game, mainPlatform, new Vector2(0, 860));
+            Platform platform = new Platform(_game, mainPlatform, new Vector2(0, 590));
             platforms.Add(platform);
         }
 
         private void OnAirPlatforms(List<Platform> platforms, Random rnd, Texture2D onAirPlatform)
         {
-            var airPlatform0 = new Platform(_game, onAirPlatform, new Vector2(50, 650));
-            var airPlatform1 = new Platform(_game, onAirPlatform, new Vector2(700, 650));
-            var airPlatform2 = new Platform(_game, onAirPlatform, new Vector2(1350, 650));
+            var airPlatform0 = new Platform(_game, onAirPlatform, new Vector2(50, 400));
+            var airPlatform1 = new Platform(_game, onAirPlatform, new Vector2(500, 400));
+            var airPlatform2 = new Platform(_game, onAirPlatform, new Vector2(950, 400));
 
             platforms.Add(airPlatform0);
             platforms.Add(airPlatform1);
@@ -60,8 +60,8 @@ namespace FightClub.Models
 
         private void OnAirPlatforms2(List<Platform> platforms, Random rnd, Texture2D onAirPlatform2)
         {
-            var airPlatform0 = new Platform(_game, onAirPlatform2, new Vector2(400, 500));
-            var airPlatform1 = new Platform(_game, onAirPlatform2, new Vector2(1000, 500));
+            var airPlatform0 = new Platform(_game, onAirPlatform2, new Vector2(150, 200));
+            var airPlatform1 = new Platform(_game, onAirPlatform2, new Vector2(850, 200));
 
             platforms.Add(airPlatform0);
             platforms.Add(airPlatform1);

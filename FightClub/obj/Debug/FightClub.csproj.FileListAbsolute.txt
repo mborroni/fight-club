@@ -136,3 +136,7 @@ C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Cat\
 C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Cat\JumpRight.xnb
 C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Cat\RunLeft.xnb
 C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Cat\RunRight.xnb
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Font\font.spritefont
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Font\jabjai_heavy.TTF
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Font\Animated.TTF
+C:\Users\milib\code\fight-club\FightClub\bin\DesktopGL\AnyCPU\Debug\Content\Font\fontAnimated.spritefont
