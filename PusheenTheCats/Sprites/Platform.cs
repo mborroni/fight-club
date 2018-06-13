@@ -1,4 +1,4 @@
-﻿using FightClub.Models;
+﻿using PusheenTheCats.Models;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FightClub.Sprites
+namespace PusheenTheCats.Sprites
 {
     public class Platform : Sprite
     {

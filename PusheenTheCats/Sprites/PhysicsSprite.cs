@@ -1,5 +1,5 @@
-﻿using FightClub.Models;
-using FightClub.Sprites;
+﻿using PusheenTheCats.Models;
+using PusheenTheCats.Sprites;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FightClub
+namespace PusheenTheCats
 {
     public class PhysicsSprite : AnimatedSprite
     {

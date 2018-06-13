@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FightClub.Models;
+using PusheenTheCats.Models;
 using Microsoft.Xna.Framework;
-using FightClub.Managers;
+using PusheenTheCats.Managers;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace FightClub.Sprites
+namespace PusheenTheCats.Sprites
 {
     public class AnimatedSprite : Sprite
     {

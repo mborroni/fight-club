@@ -2,14 +2,14 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
-using FightClub.Models;
-using FightClub.Sprites;
+using PusheenTheCats.Models;
+using PusheenTheCats.Sprites;
 using System;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FightClub.Sprites
+namespace PusheenTheCats.Sprites
 {
     public class Dog : Player
     {

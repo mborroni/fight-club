@@ -1,4 +1,4 @@
-﻿using FightClub.Sprites;
+﻿using PusheenTheCats.Sprites;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FightClub.Models
+namespace PusheenTheCats.Models
 {
     public class Player : PhysicsSprite
     {

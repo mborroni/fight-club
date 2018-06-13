@@ -1,14 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using FightClub.Models;
+using PusheenTheCats.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FightClub.Sprites;
+using PusheenTheCats.Sprites;
 
-namespace FightClub.Managers
+namespace PusheenTheCats.Managers
 {
     public class AnimationManager
     {

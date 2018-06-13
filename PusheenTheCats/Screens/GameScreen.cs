@@ -1,5 +1,5 @@
-﻿using FightClub.Models;
-using FightClub.Sprites;
+﻿using PusheenTheCats.Models;
+using PusheenTheCats.Sprites;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FightClub.Screens
+namespace PusheenTheCats.Screens
 {
     public class GameScreen : Screen
     {

@@ -8,11 +8,11 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework;
-using FightClub.Models;
+using PusheenTheCats.Models;
 using Fightclub.Models;
-using FightClub;
+using PusheenTheCats;
 
-namespace FightClub.Screens
+namespace PusheenTheCats.Screens
 {
     public class TitleScreen : Screen
     {

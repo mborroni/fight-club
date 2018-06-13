@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FightClub
+namespace PusheenTheCats
 {
     /// <summary>
     /// The main class.

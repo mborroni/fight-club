@@ -2,12 +2,12 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
-using FightClub.Sprites;
+using PusheenTheCats.Sprites;
 using System;
-using FightClub.Screens;
-using FightClub.Models;
+using PusheenTheCats.Screens;
+using PusheenTheCats.Models;
 
-namespace FightClub
+namespace PusheenTheCats
 {
     /// <summary>
     /// This is the main type for your game.

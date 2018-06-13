@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FightClub.Models
+namespace PusheenTheCats.Models
 {
     public class Animation
     {
