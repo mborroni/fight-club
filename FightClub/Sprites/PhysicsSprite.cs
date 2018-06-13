@@ -14,7 +14,7 @@ namespace FightClub
     {
         public int Health = 500;
 
-        public const float CONTACT_FORCE = 8f;
+        public const float CONTACT_FORCE = 16f;
 
         public const float MOVE_SPEED = 250f;
 
