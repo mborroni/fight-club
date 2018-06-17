@@ -72,11 +72,5 @@ namespace PusheenTheCats.Models
                 }
             }
         }
-
-        public override void Die()
-        {
-            // TODO: Set animation "Die" when Player dies. 
-        }
-
     }
 }

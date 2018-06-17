@@ -50,6 +50,7 @@
     <Compile Include="Models\Component.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Screen.cs" />
+    <Compile Include="Screens\EndScreen.cs" />
     <Compile Include="Screens\GameScreen.cs" />
     <Compile Include="Screens\TitleScreen.cs" />
     <Compile Include="Sprites\AnimatedSprite.cs" />

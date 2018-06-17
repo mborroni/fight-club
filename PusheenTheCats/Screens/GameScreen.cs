@@ -30,7 +30,7 @@ namespace PusheenTheCats.Screens
 
             backgroundGameScreen = _content.Load<Texture2D>("Backgrounds/GameScreen");
             mainFrame = new Rectangle(0, 0, width, height);
-
+            //TODO: Change Font/Ink to Font/Animated
             font = _content.Load<SpriteFont>("Font/Ink");
 
             _sprites = new List<Sprite>()
@@ -56,6 +56,14 @@ namespace PusheenTheCats.Screens
             foreach (var _platform in _platforms)
             {
                 _sprites.Add(_platform);
+            }
+            //TODO: Never changes to EndScreen
+            foreach (var sprite in _sprites)
+            {
+                if (sprite is Player && ((PhysicsSprite)sprite)._isDead)
+                {
+                   _game.ChangeScreen(new EndScreen(_game, _graphicsDevice, _content, sprite));
+                }
             }
 
         }

@@ -40,7 +40,6 @@ namespace PusheenTheCats.Sprites
                 this.Die();
             }
 
-            //TODO: Fix this.
             if (sprite is Player)
             {
                 ((PhysicsSprite)sprite).Health -= 10;

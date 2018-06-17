@@ -9,9 +9,6 @@ using PusheenTheCats.Models;
 
 namespace PusheenTheCats
 {
-    /// <summary>
-    /// This is the main type for your game.
-    /// </summary>
     public class GameMain : Game
     {
         GraphicsDeviceManager graphics;
@@ -45,14 +42,6 @@ namespace PusheenTheCats
             graphics.PreferredBackBufferHeight = ScreenHeight;
             graphics.IsFullScreen = false;
             graphics.ApplyChanges();
-
-
-            //graphics.PreferredBackBufferWidth = 800;
-            //graphics.PreferredBackBufferHeight = 480;
-            //graphics.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
-            //graphics.PreferredBackBufferHeight = GraphicsDevice.DisplayMode.Height;
-
-            //graphics.ApplyChanges();
 
             base.Initialize();
 

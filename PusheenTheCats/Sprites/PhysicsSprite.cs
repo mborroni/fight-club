@@ -30,6 +30,13 @@ namespace PusheenTheCats
 
         public Boolean _isJumping;
 
+        public Boolean _isDead
+        {
+            get {
+                return Health <= 0;
+            }
+        }
+
         public PhysicsSprite(Vector2 position, Input input)
             : base(position, input)
         {
@@ -65,6 +72,9 @@ namespace PusheenTheCats
 
             Position += Velocity;
             Velocity = Vector2.Zero;
+            //TODO: Where should this go?
+            if (_isDead)
+                return;
         }
 
         public virtual void Move(float deltaTime)
@@ -120,6 +130,7 @@ namespace PusheenTheCats
                         Jumps = 0;
                     }
                 }
+
             }
         }
 
