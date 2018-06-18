@@ -94,7 +94,7 @@ namespace PusheenTheCats
                 ContactVelocity += .5f;
             }
         }
-        //TODO: Check collisions when Player leaves screen constraint 
+
         protected void CheckCollisions(List<Sprite> sprites, float deltaTime)
         {
             foreach (var sprite in sprites)
@@ -166,5 +166,11 @@ namespace PusheenTheCats
         {
             return Position.X <= 0;
         }
+
+        public bool IsLeavingBottomConstraintScreen()
+        {
+            return Position.Y >= 550;
+        }
+
     }
 }

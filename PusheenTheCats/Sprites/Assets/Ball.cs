@@ -52,7 +52,7 @@ namespace PusheenTheCats.Sprites
         public override void Die()
         {
             Random rnd = new Random();
-            _position.X = rnd.Next(0, game.GraphicsDevice.DisplayMode.Width);
+            _position.X = rnd.Next(5, game.GraphicsDevice.DisplayMode.Width);
              _position.Y = rnd.Next(-30, 0);
         }
 

@@ -48,9 +48,9 @@ namespace PusheenTheCats.Models
 
         private void OnAirPlatforms(List<Platform> platforms, Texture2D onAirPlatform)
         {
-            var airPlatform0 = new Platform(_game, onAirPlatform, new Vector2(50, 400));
-            var airPlatform1 = new Platform(_game, onAirPlatform, new Vector2(500, 400));
-            var airPlatform2 = new Platform(_game, onAirPlatform, new Vector2(950, 400));
+            var airPlatform0 = new Platform(_game, onAirPlatform, new Vector2(50, 200));  // 950, 400
+            var airPlatform1 = new Platform(_game, onAirPlatform, new Vector2(500, 200)); // 950, 400
+            var airPlatform2 = new Platform(_game, onAirPlatform, new Vector2(950, 200)); // 950, 400
 
             platforms.Add(airPlatform0);
             platforms.Add(airPlatform1);

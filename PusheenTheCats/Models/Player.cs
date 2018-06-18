@@ -77,7 +77,7 @@ namespace PusheenTheCats.Models
 
             if (sprite is Player)
             {
-                if(sprite.Position.X >= this.Position.X)
+                if (sprite.Position.X >= this.Position.X)
                 {
                     (sprite as Player).ContactVelocity = Velocity.X + CONTACT_FORCE;
                 } else
@@ -86,13 +86,21 @@ namespace PusheenTheCats.Models
                 }
             }
 
-            if (IsLeavingRightConstraintScreen())
+            //if (IsLeavingRightConstraintScreen())
+            //{
+            //    Position = new Vector2(5, Position.Y);
+            //}
+            //else if (IsLeavingLeftConstraintScreen())
+            //{
+            //    Position = new Vector2(1238, Position.Y);
+            //}
+            if (IsLeavingLeftConstraintScreen() || IsLeavingBottomConstraintScreen())
             {
-                Position = new Vector2(5, Position.Y);
+                Position = new Vector2(1238, 500);
             }
-            else if(IsLeavingLeftConstraintScreen())
+            else if (IsLeavingRightConstraintScreen() || IsLeavingBottomConstraintScreen())
             {
-                Position = new Vector2(1238, Position.Y);
+                Position = new Vector2(5, 500);
             }
         }
     }
