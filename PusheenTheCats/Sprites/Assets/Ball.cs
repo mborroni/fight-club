@@ -10,7 +10,7 @@ using System.Threading;
 
 namespace PusheenTheCats.Sprites
 {
-    class Ball : PhysicsSprite
+    public class Ball : PhysicsSprite
     {
 
         protected Game game;

@@ -121,6 +121,7 @@ namespace PusheenTheCats
                     }
                 }
 
+
             }
         }
 
@@ -156,5 +157,14 @@ namespace PusheenTheCats
                Rectangle.Left < sprite.Rectangle.Right;
         }
 
+        public bool IsLeavingRightConstraintScreen()
+        {
+            return Position.X >= 1240;
+        }
+
+        public bool IsLeavingLeftConstraintScreen()
+        {
+            return Position.X <= 0;
+        }
     }
 }

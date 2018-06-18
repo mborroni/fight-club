@@ -85,6 +85,15 @@ namespace PusheenTheCats.Models
                     (sprite as Player).ContactVelocity = Velocity.X - CONTACT_FORCE;
                 }
             }
+
+            if (IsLeavingRightConstraintScreen())
+            {
+                Position = new Vector2(5, Position.Y);
+            }
+            else if(IsLeavingLeftConstraintScreen())
+            {
+                Position = new Vector2(1238, Position.Y);
+            }
         }
     }
 }
