@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PusheenTheCats.Screens;
 
 namespace PusheenTheCats.Models
 {
@@ -13,14 +14,27 @@ namespace PusheenTheCats.Models
     {
 
         public Input _input;
+        public GameMain _game;
+        
 
-        public Player(Game game)
-            : base(new Vector2(0, 0), null)
+        public Boolean _isDead
         {
+            get
+            {
+                return Health <= 0;
+            }
         }
 
+        public Player(GameMain game)
+            : base(new Vector2(0, 0), null)
+        {
+            this._game = game;
+        }
+        
         public override void Update(GameTime gameTime, List<Sprite> sprites) {
             base.Update(gameTime, sprites);
+            if (_isDead)
+                _game.ChangeScreen(new EndScreen(_game, _game.GraphicsDevice, _game.Content, this));
         }
 
         public override void Move(float deltaTime) {

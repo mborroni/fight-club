@@ -14,7 +14,7 @@ namespace PusheenTheCats.Sprites
     public class Dog : Player
     {
 
-        public Dog(Game game)
+        public Dog(GameMain game)
             : base(game)
         {
             _animations = new Dictionary<string, Animation>() { 

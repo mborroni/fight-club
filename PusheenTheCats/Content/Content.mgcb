@@ -260,12 +260,6 @@
 /processorParam:TextureFormat=Color
 /build:Cat/JumpingRight.png
 
-#begin Font/Animated.TTF
-/copy:Font/Animated.TTF
-
-#begin Font/fontAnimated.spritefont
-/copy:Font/fontAnimated.spritefont
-
 #begin Backgrounds/VictoryPlayerOne.png
 /importer:TextureImporter
 /processor:TextureProcessor

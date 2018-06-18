@@ -18,25 +18,25 @@ namespace PusheenTheCats.Screens
         Texture2D catVictory1;
         Texture2D catVictory2;
         Rectangle mainFrame;
-        Sprite _winner;
+        Sprite _loser;
 
-        public EndScreen(GameMain game, GraphicsDevice graphicsDevice, ContentManager content, Sprite winner) : base(game, graphicsDevice, content)
+        public EndScreen(GameMain game, GraphicsDevice graphicsDevice, ContentManager content, Sprite loser) : base(game, graphicsDevice, content)
         {
-            this._winner = winner;
+            this._loser = loser;
         }
 
         public override void LoadContent()
         {
             mainFrame = new Rectangle(0, 0, _game.ScreenWidth, _game.ScreenHeight);
 
-            catVictory1 = _content.Load<Texture2D>("VictoryPlayerOne");
-            catVictory2 = _content.Load<Texture2D>("VictoryPlayerTwo");
+            catVictory1 = _content.Load<Texture2D>("Backgrounds/VictoryPlayerOne");
+            catVictory2 = _content.Load<Texture2D>("Backgrounds/VictoryPlayerTwo");
 
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            if(_winner is Cat)
+            if(_loser is Cat)
                 spriteBatch.Draw(catVictory1, mainFrame, Color.White);
             else
                 spriteBatch.Draw(catVictory2, mainFrame, Color.White);

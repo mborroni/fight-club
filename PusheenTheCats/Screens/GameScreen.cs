@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace PusheenTheCats.Screens
 {
@@ -30,7 +31,6 @@ namespace PusheenTheCats.Screens
 
             backgroundGameScreen = _content.Load<Texture2D>("Backgrounds/GameScreen");
             mainFrame = new Rectangle(0, 0, width, height);
-            //TODO: Change Font/Ink to Font/Animated
             font = _content.Load<SpriteFont>("Font/Ink");
 
             _sprites = new List<Sprite>()
@@ -40,11 +40,11 @@ namespace PusheenTheCats.Screens
             };
 
             Random rnd = new Random();
-
-            for (int i = 0; i < 22; i++)
+;
+            for (int i = 0; i < 10; i++)
             {
                 int positionX = rnd.Next(0, _graphicsDevice.DisplayMode.Width);
-                int positionY = rnd.Next(-30, 0);
+                int positionY = rnd.Next(-80, 0);
                 Ball ball = new Ball(_game, new Vector2(positionX, positionY));
                 _sprites.Add(ball);
             }
@@ -57,15 +57,6 @@ namespace PusheenTheCats.Screens
             {
                 _sprites.Add(_platform);
             }
-            //TODO: Never changes to EndScreen
-            foreach (var sprite in _sprites)
-            {
-                if (sprite is Player && ((PhysicsSprite)sprite)._isDead)
-                {
-                   _game.ChangeScreen(new EndScreen(_game, _graphicsDevice, _content, sprite));
-                }
-            }
-
         }
 
         public override void Update(GameTime gameTime)

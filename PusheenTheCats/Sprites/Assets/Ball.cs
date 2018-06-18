@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace PusheenTheCats.Sprites
 {
@@ -21,8 +22,6 @@ namespace PusheenTheCats.Sprites
             this.game = game;
             _animations = new Dictionary<string, Animation>() {
                 { "Idle", new Animation(game.Content.Load<Texture2D>("Assets/ball"), 4) },
-                // TODO: Set animation when onCollision
-                //{ "Die", new Animation(game.Content.Load<Texture2D>("Assets/Die"), 1) },
             };
         }
 
@@ -46,6 +45,8 @@ namespace PusheenTheCats.Sprites
                 isDead = true;
                 this.Die();
             }
+
+            Thread.Sleep(2);
         }
 
         public override void Die()

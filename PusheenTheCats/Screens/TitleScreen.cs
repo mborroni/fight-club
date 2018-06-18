@@ -36,7 +36,6 @@ namespace PusheenTheCats.Screens
             mainFrame = new Rectangle(0, 0, width, height);
 
             var texture = _content.Load<Texture2D>("Button");
-            //TODO: Change Font/Ink to Font/Animated
             SpriteFont font = _content.Load<SpriteFont>("Font/Ink");
             var newGameButton = new Button(texture, font, _graphicsDevice)
             {
