@@ -12,7 +12,6 @@ namespace PusheenTheCats
 {
     public class PhysicsSprite : AnimatedSprite
     {
-        public int Health = 500;
 
         public const float CONTACT_FORCE = 16f;
 
@@ -36,7 +35,7 @@ namespace PusheenTheCats
 
         }
 
-        protected void SetAnimations()
+        protected override void SetAnimations()
         {
             if (Velocity.X > 0)
                 _animationManager.Play(_animations["WalkRight"]);
@@ -48,8 +47,8 @@ namespace PusheenTheCats
                 _animationManager.Play(_animations["JumpLeft"]);
             else if (Velocity.X > 0 && _isJumping)
                 _animationManager.Play(_animations["JumpRight"]);
-            else if (Health <= 0)
-                _animationManager.Play(_animations["Die"]);
+            //else if (Health <= 0)
+            //    _animationManager.Play(_animations["Die"]);
             else _animationManager.Stop();
         }
 

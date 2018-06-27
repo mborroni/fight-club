@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PusheenTheCats.Screens;
+using PusheenTheCats.Sprites.Assets;
 
 namespace PusheenTheCats.Models
 {
     public class Player : PhysicsSprite
     {
-
+        public int Coins = 0;
+        public int Health = 500;
         public Input _input;
         public GameMain _game;
         
@@ -25,6 +27,14 @@ namespace PusheenTheCats.Models
             }
         }
 
+        public Boolean _collectionComplete
+        {
+            get
+            {
+                return Coins == 7;
+            }
+        }
+
         public Player(GameMain game)
             : base(new Vector2(0, 0), null)
         {
@@ -34,6 +44,8 @@ namespace PusheenTheCats.Models
         public override void Update(GameTime gameTime, List<Sprite> sprites) {
             base.Update(gameTime, sprites);
             if (_isDead)
+                _game.ChangeScreen(new EndScreen(_game, _game.GraphicsDevice, _game.Content, this));
+            else if (_collectionComplete)
                 _game.ChangeScreen(new EndScreen(_game, _game.GraphicsDevice, _game.Content, this));
         }
 
@@ -86,14 +98,12 @@ namespace PusheenTheCats.Models
                 }
             }
 
-            //if (IsLeavingRightConstraintScreen())
-            //{
-            //    Position = new Vector2(5, Position.Y);
-            //}
-            //else if (IsLeavingLeftConstraintScreen())
-            //{
-            //    Position = new Vector2(1238, Position.Y);
-            //}
+            if (sprite is Coin)
+            {
+                sprite.Die();
+                Coins++;
+            }
+
             if (IsLeavingLeftConstraintScreen() || IsLeavingBottomConstraintScreen())
             {
                 Position = new Vector2(1238, 500);

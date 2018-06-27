@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using PusheenTheCats.Sprites.Assets;
 
 namespace PusheenTheCats.Screens
 {
@@ -41,12 +42,20 @@ namespace PusheenTheCats.Screens
 
             Random rnd = new Random();
 ;
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 18; i++)
             {
                 int positionX = rnd.Next(0, _graphicsDevice.DisplayMode.Width);
                 int positionY = rnd.Next(-80, 0);
                 Ball ball = new Ball(_game, new Vector2(positionX, positionY));
                 _sprites.Add(ball);
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                int positionX = rnd.Next(0, _graphicsDevice.DisplayMode.Width);
+                int positionY = rnd.Next(0, _graphicsDevice.DisplayMode.Height);
+                Coin coin= new Coin(_game, new Vector2(positionX, positionY));
+                _sprites.Add(coin);
             }
 
             var platformsMap = new PlatformsMap(_game, _graphicsDevice, _content);
@@ -80,7 +89,7 @@ namespace PusheenTheCats.Screens
             {
                 if(sprite is Player)
                 {
-                    spriteBatch.DrawString(font, string.Format("Player {0}: {1}", ++i, ((PhysicsSprite)sprite).Health), new Vector2(10, spacingY += 20), Color.Black);
+                    spriteBatch.DrawString(font, string.Format("Player {0}: {1} \nCoins: {2}", ++i, ((Player)sprite).Health, ((Player)sprite).Coins), new Vector2(10, spacingY += 40), Color.Black);
                 }
             }
         }

@@ -1,29 +1,31 @@
-﻿using PusheenTheCats.Models;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using PusheenTheCats.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Threading;
-using PusheenTheCats.Sprites.Assets;
 
-namespace PusheenTheCats.Sprites
+namespace PusheenTheCats.Sprites.Assets
 {
-    public class Ball : PhysicsSprite
+    public class Coin : AnimatedSprite
     {
-
         protected Game game;
         protected bool isDead = false;
 
-        public Ball(Game game, Vector2 position)
+        public Coin(Game game, Vector2 position)
            : base(position, null)
         {
             this.game = game;
             _animations = new Dictionary<string, Animation>() {
-                { "Idle", new Animation(game.Content.Load<Texture2D>("Assets/ball"), 4) },
+                { "Idle", new Animation(game.Content.Load<Texture2D>("Assets/coin"), 6) },
             };
+        }
+
+		protected override void SetAnimations()
+        {
+            _animationManager.Play(_animations["Idle"]);
         }
 
         public override void Update(GameTime gameTime, List<Sprite> sprites)
@@ -34,33 +36,28 @@ namespace PusheenTheCats.Sprites
 
         protected override void OnCollision(Sprite sprite)
         {
-            if (sprite is Platform)
-            {
-                isDead = true;
-                this.Die();
-            }
-
             if (sprite is Player)
             {
-                ((Player)sprite).Health -= 10;
+                ((Player)sprite).Coins += 1;
                 isDead = true;
                 this.Die();
             }
 
-            if (sprite is Coin)
+			if (sprite is Ball)
             {
-                sprite.Die();
+                isDead = true;
+                this.Die();
             }
 
-            Thread.Sleep(2);
         }
 
         public override void Die()
         {
             Random rnd = new Random();
             _position.X = rnd.Next(5, game.GraphicsDevice.DisplayMode.Width);
-             _position.Y = rnd.Next(-30, 0);
+            _position.Y = 400;
         }
 
     }
 }
+

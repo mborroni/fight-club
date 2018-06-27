@@ -25,5 +25,9 @@ namespace PusheenTheCats.Sprites
             _animationManager.Draw(spriteBatch);
         }
 
+        protected virtual void SetAnimations()
+        {
+           
+        }
     }
 }

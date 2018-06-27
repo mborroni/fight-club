@@ -18,11 +18,11 @@ namespace PusheenTheCats.Screens
         Texture2D catVictory1;
         Texture2D catVictory2;
         Rectangle mainFrame;
-        Sprite _loser;
+        Sprite sprite;
 
-        public EndScreen(GameMain game, GraphicsDevice graphicsDevice, ContentManager content, Sprite loser) : base(game, graphicsDevice, content)
+        public EndScreen(GameMain game, GraphicsDevice graphicsDevice, ContentManager content, Sprite sprite) : base(game, graphicsDevice, content)
         {
-            this._loser = loser;
+            this.sprite = sprite;
         }
 
         public override void LoadContent()
@@ -36,10 +36,20 @@ namespace PusheenTheCats.Screens
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            if(_loser is Cat)
-                spriteBatch.Draw(catVictory1, mainFrame, Color.White);
-            else
-                spriteBatch.Draw(catVictory2, mainFrame, Color.White);
+            if (((Player)sprite)._isDead)
+            {
+                if (sprite is Cat)
+                    spriteBatch.Draw(catVictory1, mainFrame, Color.White);
+                else
+                    spriteBatch.Draw(catVictory2, mainFrame, Color.White);
+            }
+            else if (((Player)sprite)._collectionComplete)
+            {
+                if (sprite is Cat)
+                    spriteBatch.Draw(catVictory2, mainFrame, Color.White);
+                else
+                    spriteBatch.Draw(catVictory1, mainFrame, Color.White);
+            }
 
             if (Keyboard.GetState().IsKeyDown(Keys.Space))
                 _game.ChangeScreen(new TitleScreen(_game, _graphicsDevice, _content));
