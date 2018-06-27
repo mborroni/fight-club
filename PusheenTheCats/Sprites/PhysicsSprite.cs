@@ -58,8 +58,8 @@ namespace PusheenTheCats
 
             Move(deltaTime);
             CheckCollisions(sprites, deltaTime);
-            SetAnimations();
 
+            SetAnimations();
             _animationManager.Update(gameTime);
 
             Position += Velocity;
@@ -94,6 +94,8 @@ namespace PusheenTheCats
             }
         }
 
+        #region Collisions
+
         protected void CheckCollisions(List<Sprite> sprites, float deltaTime)
         {
             foreach (var sprite in sprites)
@@ -119,8 +121,6 @@ namespace PusheenTheCats
                         Jumps = 0;
                     }
                 }
-
-
             }
         }
 
@@ -170,6 +170,6 @@ namespace PusheenTheCats
         {
             return Position.Y >= 550;
         }
-
+        #endregion
     }
 }

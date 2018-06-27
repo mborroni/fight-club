@@ -29,5 +29,15 @@ namespace PusheenTheCats.Sprites
         {
            
         }
+
+        public override void Update(GameTime gameTime, List<Sprite> sprites)
+        {
+            float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            SetAnimations();
+            _animationManager.Update(gameTime);
+
+
+        }
     }
 }
