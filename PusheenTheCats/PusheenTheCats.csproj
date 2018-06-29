@@ -74,7 +74,7 @@
     <Compile Include="Sprites\Players\Dog.cs" />
     <Compile Include="Sprites\Assets\Ball.cs" />
     <Compile Include="Sprites\Sprite.cs" />
-    <Compile Include="Models\PlatformsMap.cs" />
+    <Compile Include="Managers\MapManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace PusheenTheCats.Models
 {
-    public class PlatformsMap
+    public class MapManager
     {
         protected ContentManager _content;
         protected GameMain _game;
         protected GraphicsDevice _graphicsDevice;
 
-        public PlatformsMap(GameMain game, GraphicsDevice graphicsDevice, ContentManager content)
+        public MapManager(GameMain game, GraphicsDevice graphicsDevice, ContentManager content)
         {
             this._game = game;
             this._content = content;
@@ -35,8 +35,6 @@ namespace PusheenTheCats.Models
 
             OnAirPlatforms(platforms, onAirPlatform);
 
-            //OnAirPlatforms2(platforms, rnd, onAirPlatform);
-
             return platforms;
         }
 
@@ -48,22 +46,13 @@ namespace PusheenTheCats.Models
 
         private void OnAirPlatforms(List<Platform> platforms, Texture2D onAirPlatform)
         {
-            var airPlatform0 = new Platform(_game, onAirPlatform, new Vector2(50, 200));  // 950, 400
-            var airPlatform1 = new Platform(_game, onAirPlatform, new Vector2(500, 200)); // 950, 400
-            var airPlatform2 = new Platform(_game, onAirPlatform, new Vector2(950, 200)); // 950, 400
+            var airPlatform0 = new Platform(_game, onAirPlatform, new Vector2(50, 200)); 
+            var airPlatform1 = new Platform(_game, onAirPlatform, new Vector2(500, 200)); 
+            var airPlatform2 = new Platform(_game, onAirPlatform, new Vector2(950, 200)); 
 
             platforms.Add(airPlatform0);
             platforms.Add(airPlatform1);
             platforms.Add(airPlatform2);
         }
-
-        //private void OnAirPlatforms2(List<Platform> platforms, Texture2D onAirPlatform2)
-        //{
-        //    var airPlatform0 = new Platform(_game, onAirPlatform2, new Vector2(150, 200));
-        //    var airPlatform1 = new Platform(_game, onAirPlatform2, new Vector2(850, 200));
-
-        //    platforms.Add(airPlatform0);
-        //    platforms.Add(airPlatform1);
-        //}
     }
 }

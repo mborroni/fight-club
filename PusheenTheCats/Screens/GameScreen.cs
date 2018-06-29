@@ -16,13 +16,14 @@ namespace PusheenTheCats.Screens
 {
     public class GameScreen : Screen
     {
-        public List<Sprite> _sprites;
+        protected List<Sprite> _sprites;
 
         Texture2D backgroundGameScreen;
         Rectangle mainFrame;
         SpriteFont font;
 
         CoinManager _coinManager;
+        MapManager _mapManager;
 
         public GameScreen(GameMain game, GraphicsDevice graphicsDevice, ContentManager content) : base(game, graphicsDevice, content)
         {
@@ -50,28 +51,33 @@ namespace PusheenTheCats.Screens
                 int positionX = rnd.Next(0, _graphicsDevice.DisplayMode.Width);
                 int positionY = rnd.Next(-80, 0);
                 Ball ball = new Ball(_game, new Vector2(positionX, positionY));
-                _sprites.Add(ball);
+                AddSprite(ball);
             }
 
             _coinManager = new CoinManager(_game, _graphicsDevice, this);
 
-            var platformsMap = new PlatformsMap(_game, _graphicsDevice, _content);
+            _mapManager = new MapManager(_game, _graphicsDevice, _content);
 
-            var _platforms = platformsMap.CreatePlatforms();
+            var _platforms = _mapManager.CreatePlatforms();
 
             foreach (var _platform in _platforms)
             {
-                _sprites.Add(_platform);
+                AddSprite(_platform);
             }
+        }
+
+        public void AddSprite(Sprite _sprite)
+        {
+            _sprites.Add(_sprite);
         }
 
         public override void Update(GameTime gameTime)
         {
-            _coinManager.Update(gameTime);
             foreach (var sprite in _sprites)
             {
                 sprite.Update(gameTime, _sprites);
             }
+            _coinManager.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -93,7 +99,5 @@ namespace PusheenTheCats.Screens
                 }
             }
         }
-
-
     }
 }

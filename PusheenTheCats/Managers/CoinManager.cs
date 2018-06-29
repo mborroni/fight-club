@@ -12,7 +12,7 @@ namespace PusheenTheCats.Managers
 {
     public class CoinManager
     {
-        public const float COIN_INTERVAL = 2f;
+        protected const float COIN_INTERVAL = 2f;
 
         protected GameMain _game;
 
@@ -40,7 +40,7 @@ namespace PusheenTheCats.Managers
             Coin _coin = new Coin(_game, new Vector2(positionX, positionY));
 
             _coins.Add(_coin);
-            _gameScreen._sprites.Add(_coin);
+            _gameScreen.AddSprite(_coin);
         }
 
         public void Update(GameTime gameTime)
