@@ -43,10 +43,14 @@ namespace PusheenTheCats.Models
         
         public override void Update(GameTime gameTime, List<Sprite> sprites) {
             base.Update(gameTime, sprites);
+
             if (_isDead)
                 _game.ChangeScreen(new EndScreen(_game, _game.GraphicsDevice, _game.Content, this));
             else if (_collectionComplete)
                 _game.ChangeScreen(new EndScreen(_game, _game.GraphicsDevice, _game.Content, this));
+
+
+            ConstraintScreen();
         }
 
         public override void Move(float deltaTime) {
@@ -76,7 +80,8 @@ namespace PusheenTheCats.Models
 
         }
 
-        protected override void OnCollision(Sprite sprite) {
+        protected override void OnCollision(Sprite sprite)
+        {
             if (sprite is Ball)
             {
                 Health -= 10;
@@ -92,7 +97,8 @@ namespace PusheenTheCats.Models
                 if (sprite.Position.X >= this.Position.X)
                 {
                     (sprite as Player).ContactVelocity = Velocity.X + CONTACT_FORCE;
-                } else
+                }
+                else
                 {
                     (sprite as Player).ContactVelocity = Velocity.X - CONTACT_FORCE;
                 }
@@ -103,14 +109,17 @@ namespace PusheenTheCats.Models
                 sprite.Die();
                 Coins++;
             }
+        }
 
-            if (IsLeavingLeftConstraintScreen() || IsLeavingBottomConstraintScreen())
+        private void ConstraintScreen()
+        {
+            if (IsLeavingLeftConstraintScreen())
             {
-                Position = new Vector2(1238, 500);
+                Position = new Vector2(1240, Position.Y);
             }
-            else if (IsLeavingRightConstraintScreen() || IsLeavingBottomConstraintScreen())
+            else if (IsLeavingRightConstraintScreen())
             {
-                Position = new Vector2(5, 500);
+                Position = new Vector2(0, Position.Y);
             }
         }
     }

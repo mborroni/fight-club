@@ -89,7 +89,7 @@ namespace PusheenTheCats.Screens
             {
                 if(sprite is Player)
                 {
-                    spriteBatch.DrawString(font, string.Format("Player {0}: {1} \nCoins: {2}", ++i, ((Player)sprite).Health, ((Player)sprite).Coins), new Vector2(10, spacingY += 40), Color.Black);
+                    spriteBatch.DrawString(font, string.Format("Player {0}: {1} \nCoins: {2} POSITION {3} {4}", ++i, ((Player)sprite).Health, ((Player)sprite).Coins, ((Player)sprite).Position.X, ((Player)sprite).Position.Y) , new Vector2(10, spacingY += 40), Color.Black);
                 }
             }
         }

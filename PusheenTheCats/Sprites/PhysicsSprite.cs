@@ -94,8 +94,6 @@ namespace PusheenTheCats
             }
         }
 
-        #region Collisions
-
         protected void CheckCollisions(List<Sprite> sprites, float deltaTime)
         {
             foreach (var sprite in sprites)
@@ -165,11 +163,5 @@ namespace PusheenTheCats
         {
             return Position.X <= 0;
         }
-
-        public bool IsLeavingBottomConstraintScreen()
-        {
-            return Position.Y >= 550;
-        }
-        #endregion
     }
 }
