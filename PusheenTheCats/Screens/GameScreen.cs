@@ -10,16 +10,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using PusheenTheCats.Sprites.Assets;
+using PusheenTheCats.Managers;
 
 namespace PusheenTheCats.Screens
 {
     public class GameScreen : Screen
     {
-        private List<Sprite> _sprites;
+        public List<Sprite> _sprites;
 
         Texture2D backgroundGameScreen;
         Rectangle mainFrame;
         SpriteFont font;
+
+        CoinManager _coinManager;
 
         public GameScreen(GameMain game, GraphicsDevice graphicsDevice, ContentManager content) : base(game, graphicsDevice, content)
         {
@@ -50,13 +53,7 @@ namespace PusheenTheCats.Screens
                 _sprites.Add(ball);
             }
 
-            for (int i = 0; i < 10; i++)
-            {
-                int positionX = rnd.Next(0, _graphicsDevice.DisplayMode.Width);
-                int positionY = rnd.Next(0, _graphicsDevice.DisplayMode.Height);
-                Coin coin= new Coin(_game, new Vector2(positionX, positionY));
-                _sprites.Add(coin);
-            }
+            _coinManager = new CoinManager(_game, _graphicsDevice, this);
 
             var platformsMap = new PlatformsMap(_game, _graphicsDevice, _content);
 
@@ -70,6 +67,7 @@ namespace PusheenTheCats.Screens
 
         public override void Update(GameTime gameTime)
         {
+            _coinManager.Update(gameTime);
             foreach (var sprite in _sprites)
             {
                 sprite.Update(gameTime, _sprites);
@@ -83,13 +81,15 @@ namespace PusheenTheCats.Screens
             {
                 sprite.Draw(spriteBatch);
             }
+
             var spacingY = 10;
             var i = 0;
+
             foreach (var sprite in _sprites)
             {
                 if(sprite is Player)
                 {
-                    spriteBatch.DrawString(font, string.Format("Player {0}: {1} \nCoins: {2} POSITION {3} {4}", ++i, ((Player)sprite).Health, ((Player)sprite).Coins, ((Player)sprite).Position.X, ((Player)sprite).Position.Y) , new Vector2(10, spacingY += 40), Color.Black);
+                    spriteBatch.DrawString(font, string.Format("Player {0}: {1} \nCoins: {2}", ++i, ((Player)sprite).Health, ((Player)sprite).Coins), new Vector2(10, spacingY += 40), Color.Black);
                 }
             }
         }

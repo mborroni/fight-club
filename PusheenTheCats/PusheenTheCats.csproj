@@ -51,6 +51,7 @@
     <Compile Include="Managers\Button.cs" />
     <Compile Include="GameMain.cs" />
     <Compile Include="Managers\AnimationManager.cs" />
+    <Compile Include="Managers\CoinManager.cs" />
     <Compile Include="Models\Animation.cs" />
     <Compile Include="Models\Input.cs" />
     <Compile Include="Models\Component.cs" />
